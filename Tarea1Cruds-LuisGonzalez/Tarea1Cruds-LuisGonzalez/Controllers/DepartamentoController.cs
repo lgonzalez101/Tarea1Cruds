@@ -34,6 +34,8 @@ namespace Tarea1Cruds_LuisGonzalez.Controllers
             {
                 context.DepartamentoSet.Add(model);
                 context.SaveChanges();
+
+
                 return RedirectToAction("Index");
             }
         }
