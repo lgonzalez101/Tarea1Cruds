@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ModelDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="ModelDBContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EmpleadoSet" EntityType="ModelDB.Empleado" />
+    <EntitySet Name="DepartamentoSet" EntityType="ModelDB.Departamento" />
+    <AssociationSet Name="DepartamentoEmpleado" Association="ModelDB.DepartamentoEmpleado">
+      <End Role="Departamento" EntitySet="DepartamentoSet" />
+      <End Role="Empleado" EntitySet="EmpleadoSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" />
+    <Property Name="Apellido" Type="String" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" />
+    <Property Name="Sueldo" Type="Decimal" Nullable="false" />
+    <NavigationProperty Name="Departamento" Relationship="ModelDB.DepartamentoEmpleado" FromRole="Empleado" ToRole="Departamento" />
+  </EntityType>
+  <EntityType Name="Departamento">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreDepartamento" Type="String" Nullable="false" />
+    <NavigationProperty Name="Empleado" Relationship="ModelDB.DepartamentoEmpleado" FromRole="Departamento" ToRole="Empleado" />
+  </EntityType>
+  <Association Name="DepartamentoEmpleado">
+    <End Type="ModelDB.Departamento" Role="Departamento" Multiplicity="1" />
+    <End Type="ModelDB.Empleado" Role="Empleado" Multiplicity="*" />
+  </Association>
+</Schema>

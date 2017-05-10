@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ModelDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelDBStoreContainer">
+    <EntitySet Name="EmpleadoSet" EntityType="ModelDB.Store.EmpleadoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DepartamentoSet" EntityType="ModelDB.Store.DepartamentoSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="DepartamentoEmpleado" Association="ModelDB.Store.DepartamentoEmpleado">
+      <End Role="Departamento" EntitySet="DepartamentoSet" />
+      <End Role="Empleado" EntitySet="EmpleadoSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="EmpleadoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Apellido" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="datetime" Nullable="false" />
+    <Property Name="Sueldo" Type="decimal" Nullable="false" />
+    <Property Name="Departamento_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DepartamentoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreDepartamento" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="DepartamentoEmpleado">
+    <End Role="Departamento" Type="ModelDB.Store.DepartamentoSet" Multiplicity="1" />
+    <End Role="Empleado" Type="ModelDB.Store.EmpleadoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamento">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="Departamento_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
