@@ -13,9 +13,9 @@ namespace Tarea1Cruds_LuisGonzalez.Controllers
         public ActionResult Index()
         {
 
-            using (var context = new ModelDBContainer())
+            using (var context = new TareaEntities())
             {
-                var list = context.DepartamentoSet.ToList();
+                var list = context.Departamento.ToList();
                 return View(list);
             }
                 
@@ -30,9 +30,9 @@ namespace Tarea1Cruds_LuisGonzalez.Controllers
         [HttpPost]
         public ActionResult Create(Departamento model)
         {
-            using (var context = new ModelDBContainer())
+            using (var context = new TareaEntities())
             {
-                context.DepartamentoSet.Add(model);
+                context.Departamento.Add(model);
                 context.SaveChanges();
 
 

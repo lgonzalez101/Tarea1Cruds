@@ -18,7 +18,8 @@ namespace Tarea1Cruds_LuisGonzalez.DB
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public System.DateTime FechaNacimiento { get; set; }
-        public decimal Sueldo { get; set; }
+        public Nullable<decimal> Sueldo { get; set; }
+        public Nullable<int> IdDepto { get; set; }
     
         public virtual Departamento Departamento { get; set; }
     }

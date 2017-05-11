@@ -202,25 +202,25 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DB\Departamento.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+      <DependentUpon>ModelTest.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Empleado.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
+      <DependentUpon>ModelTest.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\ModelDB.Context.cs">
+    <Compile Include="DB\ModelTest.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDB.Context.tt</DependentUpon>
+      <DependentUpon>ModelTest.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\ModelDB.cs">
+    <Compile Include="DB\ModelTest.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDB.tt</DependentUpon>
+      <DependentUpon>ModelTest.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\ModelDB.Designer.cs">
+    <Compile Include="DB\ModelTest.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDB.edmx</DependentUpon>
+      <DependentUpon>ModelTest.edmx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -234,16 +234,15 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="DB\ModelDB.Context.tt">
+    <Content Include="DB\ModelTest.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelDB.Context.cs</LastGenOutput>
-      <DependentUpon>ModelDB.edmx</DependentUpon>
+      <DependentUpon>ModelTest.edmx</DependentUpon>
+      <LastGenOutput>ModelTest.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DB\ModelDB.edmx.sql" />
-    <Content Include="DB\ModelDB.tt">
+    <Content Include="DB\ModelTest.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelDB.cs</LastGenOutput>
-      <DependentUpon>ModelDB.edmx</DependentUpon>
+      <DependentUpon>ModelTest.edmx</DependentUpon>
+      <LastGenOutput>ModelTest.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -254,12 +253,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="DB\ModelDB.edmx">
+    <EntityDeploy Include="DB\ModelTest.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelTest.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="DB\ModelDB.edmx.diagram">
-      <DependentUpon>ModelDB.edmx</DependentUpon>
+    <Content Include="DB\ModelTest.edmx.diagram">
+      <DependentUpon>ModelTest.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
