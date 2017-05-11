@@ -1,20 +1,17 @@
-﻿@model IEnumerable<Tarea1Cruds_LuisGonzalez.DB.Departamento>
+﻿@model IEnumerable<Tarea1Cruds_LuisGonzalez.Models.DepartamentoViewModel>
 
-@{
-    ViewBag.Title = "Index";
-}
-
-<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="~/Departamento/Create" class="btn btn-primary"> Crear Departamento</a>
 </p>
+<h2>Lista de Departamentos</h2>
+
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.NombreDepartamento)
         </th>
-        <th></th>
+        <th>Acciones</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -23,9 +20,8 @@
             @Html.DisplayFor(modelItem => item.NombreDepartamento)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |         
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

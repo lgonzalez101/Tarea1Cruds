@@ -1,16 +1,19 @@
 ﻿@model Tarea1Cruds_LuisGonzalez.Models.DepartamentoViewModel
+
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
 }
 
 
-@using (Html.BeginForm()) 
-{  
+
+@using (Html.BeginForm())
+{   
     <h2></h2>
     <div class="form-horizontal">
-        <h4>Crear Departamento</h4>
+        <h4>Editar Departamento</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
         <div class="form-group">
             @Html.LabelFor(model => model.NombreDepartamento, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -22,8 +25,8 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <a type="button" value="Regresar" class="btn btn-default" href="/Departamento/Index">Regresar</a>
-                <button type="submit" value="Crear Departamento" class="btn btn-success">Crear</button>
-               
+                <button type="submit" value="Crear Departamento" class="btn btn-success">Editar</button>
+
             </div>
         </div>
     </div>
