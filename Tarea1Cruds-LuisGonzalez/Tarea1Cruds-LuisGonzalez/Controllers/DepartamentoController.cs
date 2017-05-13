@@ -17,8 +17,8 @@ namespace Tarea1Cruds_LuisGonzalez.Controllers
 
             using (var context = new TareaEntities())
             {
-                var list = context.Departamento.Select(x=>new DepartamentoViewModel { Id = x.Id, NombreDepartamento=x.NombreDepartamento}).ToList();
-                return View(list);
+                var lista = context.Departamento.Select(x=>new DepartamentoViewModel { Id = x.Id, NombreDepartamento=x.NombreDepartamento}).ToList();
+                return View(lista);
             }
                 
         }
